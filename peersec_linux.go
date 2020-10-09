@@ -6,7 +6,7 @@ import (
 )
 
 // GetsockoptPeerSec invokes getsockopt with an optname of SO_PEERSEC
-// returning the peersec label associated with the given file descriptor
+// returning the security state associated with the given socket file descriptor
 func GetsockoptPeerSec(fd, level int) (string, syscall.Errno) {
 
 	retried := false
