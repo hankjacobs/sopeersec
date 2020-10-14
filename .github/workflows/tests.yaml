@@ -1,10 +1,10 @@
 on: push
-name: Tests
+name: go test
 jobs:
   checks:
-    name: Run tests
+    name: go test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Run tests
+    - name: go test
       uses: cedrickring/golang-action@1.6.0
