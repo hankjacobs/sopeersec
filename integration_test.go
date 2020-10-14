@@ -10,7 +10,7 @@ import (
 	"testing"
 )
 
-func TestUnconfined(t *testing.T) {
+func TestGetsockoptPeerSec(t *testing.T) {
 	td, err := ioutil.TempDir("", "sopeersec")
 	if err != nil {
 		t.Fatal(err)
@@ -39,6 +39,9 @@ func TestUnconfined(t *testing.T) {
 	}
 
 	expected := "unconfined"
+	if os.Getenv("GITHUB_ACTIONS") == "true" {
+		expected = "docker-default"
+	}
 	if label != expected {
 		log.Fatalf("context was %v when it should have been %v", label, "expected")
 	}
