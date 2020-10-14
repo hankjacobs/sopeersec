@@ -1,5 +1,5 @@
 on: push
-name: Run tests
+name: Tests
 jobs:
   checks:
     name: Run tests
