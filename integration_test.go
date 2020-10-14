@@ -40,7 +40,7 @@ func TestGetsockoptPeerSec(t *testing.T) {
 
 	expected := "unconfined"
 	if os.Getenv("GITHUB_ACTIONS") == "true" {
-		expected = "docker-default"
+		expected = "docker-default (enforce)"
 	}
 	if label != expected {
 		log.Fatalf("context was %v when it should have been %v", label, "expected")
