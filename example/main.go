@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	l, err := net.Listen("unix", "/home/ubuntu/test/test.socket")
+	l, err := net.Listen("unix", "/home/ubuntu/test/test1.socket")
 	if err != nil {
 		log.Fatal("listen error:", err)
 	}

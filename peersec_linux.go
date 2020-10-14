@@ -16,7 +16,7 @@ func GetsockoptPeerSec(fd, level int) (string, syscall.Errno) {
 retry:
 	errno := getsockopt(fd, level, syscall.SO_PEERSEC, unsafe.Pointer(&val[0]), &len)
 	if errno == 0 {
-		return string(val), 0
+		return string(val[:len]), 0
 	}
 
 	if errno == syscall.ERANGE && !retried {
